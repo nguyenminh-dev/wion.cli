@@ -1,0 +1,101 @@
+{
+  "template": "app",
+  "imports": {
+    "Volo.Abp.LeptonXLiteTheme": {
+      "version": "4.3.1",
+      "isInstalled": true
+    },
+    "Volo.Abp.Account": {
+      "version": "9.3.1",
+      "isInstalled": true
+    },
+    "Volo.Abp.OpenIddict": {
+      "version": "9.3.1",
+      "isInstalled": true
+    },
+    "Volo.Abp.Identity": {
+      "version": "9.3.1",
+      "isInstalled": true
+    },
+    "Volo.Abp.TenantManagement": {
+      "version": "9.3.1",
+      "isInstalled": true
+    },
+    "Volo.Abp.SettingManagement": {
+      "version": "9.3.1",
+      "isInstalled": true
+    },
+    "Volo.Abp.PermissionManagement": {
+      "version": "9.3.1",
+      "isInstalled": true
+    },
+    "Volo.Abp.FeatureManagement": {
+      "version": "9.3.1",
+      "isInstalled": true
+    }
+  },
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "Wion.Template.Application": {
+      "path": "src/Wion.Template.Application/Wion.Template.Application.abppkg",
+      "folder": "src"
+    },
+    "Wion.Template.Application.Tests": {
+      "path": "test/Wion.Template.Application.Tests/Wion.Template.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "Wion.Template.Domain.Shared": {
+      "path": "src/Wion.Template.Domain.Shared/Wion.Template.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "Wion.Template.Application.Contracts": {
+      "path": "src/Wion.Template.Application.Contracts/Wion.Template.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "Wion.Template.HttpApi": {
+      "path": "src/Wion.Template.HttpApi/Wion.Template.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "Wion.Template.HttpApi.Client": {
+      "path": "src/Wion.Template.HttpApi.Client/Wion.Template.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "Wion.Template.EntityFrameworkCore.Tests": {
+      "path": "test/Wion.Template.EntityFrameworkCore.Tests/Wion.Template.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "Wion.Template.EntityFrameworkCore": {
+      "path": "src/Wion.Template.EntityFrameworkCore/Wion.Template.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "Wion.Template.TestBase": {
+      "path": "test/Wion.Template.TestBase/Wion.Template.TestBase.abppkg",
+      "folder": "test"
+    },
+    "Wion.Template.Domain.Tests": {
+      "path": "test/Wion.Template.Domain.Tests/Wion.Template.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "Wion.Template.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/Wion.Template.HttpApi.Client.ConsoleTestApp/Wion.Template.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "Wion.Template.DbMigrator": {
+      "path": "src/Wion.Template.DbMigrator/Wion.Template.DbMigrator.abppkg",
+      "folder": "src"
+    },
+    "Wion.Template.HttpApi.Host": {
+      "path": "src/Wion.Template.HttpApi.Host/Wion.Template.HttpApi.Host.abppkg",
+      "folder": "src"
+    },
+    "Wion.Template.Domain": {
+      "path": "src/Wion.Template.Domain/Wion.Template.Domain.abppkg",
+      "folder": "src"
+    }
+  }
+}
