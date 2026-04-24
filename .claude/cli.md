@@ -77,13 +77,20 @@ This includes:
 
 ## Technical Constraints
 
-* .NET 6 Console Application
+* .NET 6.0 Console Application
+* ABP Framework 5.2.2
 * Use clean architecture
 * Separate responsibilities:
 
   * TemplateProcessor
   * FileReplacer
   * DirectoryRenamer
+
+## Framework Requirements
+
+* Target Framework: net6.0
+* ABP Framework: 5.2.2
+* Do NOT use .NET 9.0 - all projects must target net6.0
 
 ## Output Requirements
 
