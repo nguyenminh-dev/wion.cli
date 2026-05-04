@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "vhWEqgEuWU8=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\minhnv\\Desktop\\wion.cli\\Wion.Cli\\Wion.Cli.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\minhnv\\.nuget\\packages\\system.commandline\\2.0.0-beta4.22272.1\\system.commandline.2.0.0-beta4.22272.1.nupkg.sha512"
+  ],
+  "logs": []
+}

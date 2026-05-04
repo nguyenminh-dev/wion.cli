@@ -1,34 +1,19 @@
-using System;
 using Microsoft.Extensions.DependencyInjection;
-using Volo.Abp.Uow;
-using Volo.Abp.AuditLogging.EntityFrameworkCore;
-using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
-using Volo.Abp.EntityFrameworkCore.SqlServer;
+using Volo.Abp.EntityFrameworkCore.PostgreSql;
 using Volo.Abp.FeatureManagement.EntityFrameworkCore;
-using Volo.Abp.Identity.EntityFrameworkCore;
-using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.Modularity;
-using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
-using Volo.Abp.BlobStoring.Database.EntityFrameworkCore;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
-using Volo.Abp.Studio;
 
 namespace Wion.Template.EntityFrameworkCore;
 
 [DependsOn(
     typeof(TemplateDomainModule),
-    typeof(AbpPermissionManagementEntityFrameworkCoreModule),
-    typeof(AbpSettingManagementEntityFrameworkCoreModule),
-    typeof(AbpEntityFrameworkCoreSqlServerModule),
-    typeof(AbpBackgroundJobsEntityFrameworkCoreModule),
-    typeof(AbpAuditLoggingEntityFrameworkCoreModule),
+    typeof(AbpEntityFrameworkCorePostgreSqlModule),
     typeof(AbpFeatureManagementEntityFrameworkCoreModule),
-    typeof(AbpIdentityEntityFrameworkCoreModule),
-    typeof(AbpOpenIddictEntityFrameworkCoreModule),
-    typeof(AbpTenantManagementEntityFrameworkCoreModule),
-    typeof(BlobStoringDatabaseEntityFrameworkCoreModule)
+    typeof(AbpSettingManagementEntityFrameworkCoreModule),
+    typeof(AbpTenantManagementEntityFrameworkCoreModule)
     )]
 public class TemplateEntityFrameworkCoreModule : AbpModule
 {
@@ -42,24 +27,19 @@ public class TemplateEntityFrameworkCoreModule : AbpModule
     {
         context.Services.AddAbpDbContext<TemplateDbContext>(options =>
         {
-                /* Remove "includeAllEntities: true" to create
-                 * default repositories only for aggregate roots */
+            /* Remove "includeAllEntities: true" to create
+             * default repositories only for aggregate roots */
             options.AddDefaultRepositories(includeAllEntities: true);
         });
-
-        if (AbpStudioAnalyzeHelper.IsInAnalyzeMode)
-        {
-            return;
-        }
 
         Configure<AbpDbContextOptions>(options =>
         {
             /* The main point to change your DBMS.
              * See also TemplateDbContextFactory for EF Core tooling. */
 
-            options.UseSqlServer();
+            options.UseNpgsql();
 
         });
-        
+
     }
 }

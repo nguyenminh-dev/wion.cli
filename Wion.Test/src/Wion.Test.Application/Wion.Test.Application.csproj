@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Wion.Test</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Wion.Test.Domain\Wion.Test.Domain.csproj" />
+    <ProjectReference Include="..\Wion.Test.Application.Contracts\Wion.Test.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="5.2.2" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="5.2.2" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Application" Version="5.2.2" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Application" Version="5.2.2" />
+  </ItemGroup>
+
+</Project>

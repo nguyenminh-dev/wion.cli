@@ -1,24 +1,18 @@
 ﻿using Localization.Resources.AbpUi;
-using Wion.Template.Localization;
-using Volo.Abp.Account;
-using Volo.Abp.SettingManagement;
 using Volo.Abp.FeatureManagement;
-using Volo.Abp.Identity;
-using Volo.Abp.Modularity;
-using Volo.Abp.PermissionManagement.HttpApi;
 using Volo.Abp.Localization;
+using Volo.Abp.Modularity;
+using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
+using Wion.Template.Localization;
 
 namespace Wion.Template;
 
- [DependsOn(
+[DependsOn(
     typeof(TemplateApplicationContractsModule),
-    typeof(AbpPermissionManagementHttpApiModule),
+    typeof(AbpFeatureManagementHttpApiModule),
     typeof(AbpSettingManagementHttpApiModule),
-    typeof(AbpAccountHttpApiModule),
-    typeof(AbpIdentityHttpApiModule),
-    typeof(AbpTenantManagementHttpApiModule),
-    typeof(AbpFeatureManagementHttpApiModule)
+    typeof(AbpTenantManagementHttpApiModule)
     )]
 public class TemplateHttpApiModule : AbpModule
 {

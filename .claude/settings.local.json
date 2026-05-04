@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(dotnet *)"
+      "Bash(dotnet *)",
+      "Bash('C:\\\\Users\\\\minhnv\\\\Desktop\\\\wion.cli\\\\Wion.Cli\\\\bin\\\\Debug\\\\net6.0\\\\wion.dll' new *)",
+      "Bash(grep -E '\\\\.\\(abpmdl|abpsln|DotSettings|png\\)$')",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }

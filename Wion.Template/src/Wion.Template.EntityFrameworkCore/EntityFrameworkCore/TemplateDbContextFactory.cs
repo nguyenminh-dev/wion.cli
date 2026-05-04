@@ -1,8 +1,7 @@
-﻿using System;
-using System.IO;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
+using System.IO;
 
 namespace Wion.Template.EntityFrameworkCore;
 
@@ -13,12 +12,12 @@ public class TemplateDbContextFactory : IDesignTimeDbContextFactory<TemplateDbCo
     public TemplateDbContext CreateDbContext(string[] args)
     {
         var configuration = BuildConfiguration();
-        
+
         TemplateEfCoreEntityExtensionMappings.Configure();
 
         var builder = new DbContextOptionsBuilder<TemplateDbContext>()
-            .UseSqlServer(configuration.GetConnectionString("Default"));
-        
+            .UseNpgsql(configuration.GetConnectionString("Default"));
+
         return new TemplateDbContext(builder.Options);
     }
 

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using Shouldly;
-using Volo.Abp.Domain.Repositories;
-using Volo.Abp.Identity;
+﻿using System.Threading.Tasks;
 using Xunit;
 
 namespace Wion.Template.EntityFrameworkCore.Samples;
@@ -14,11 +10,8 @@ namespace Wion.Template.EntityFrameworkCore.Samples;
 [Collection(TemplateTestConsts.CollectionDefinitionName)]
 public class SampleRepositoryTests : TemplateEntityFrameworkCoreTestBase
 {
-    private readonly IRepository<IdentityUser, Guid> _appUserRepository;
-
     public SampleRepositoryTests()
     {
-        _appUserRepository = GetRequiredService<IRepository<IdentityUser, Guid>>();
     }
 
     [Fact]
@@ -29,12 +22,10 @@ public class SampleRepositoryTests : TemplateEntityFrameworkCoreTestBase
          */
         await WithUnitOfWorkAsync(async () =>
         {
-                //Act
-                var adminUser = await _appUserRepository
-                .FirstOrDefaultAsync(u => u.UserName == "admin");
+            //Act
 
-                //Assert
-                adminUser.ShouldNotBeNull();
+            //Assert
+
         });
     }
 }

@@ -1,9 +1,6 @@
-﻿using Volo.Abp.Account;
+﻿using Volo.Abp.FeatureManagement;
 using Volo.Abp.Modularity;
-using Volo.Abp.PermissionManagement;
 using Volo.Abp.SettingManagement;
-using Volo.Abp.FeatureManagement;
-using Volo.Abp.Identity;
 using Volo.Abp.TenantManagement;
 
 namespace Wion.Template;
@@ -12,10 +9,7 @@ namespace Wion.Template;
     typeof(TemplateDomainSharedModule),
     typeof(AbpFeatureManagementApplicationContractsModule),
     typeof(AbpSettingManagementApplicationContractsModule),
-    typeof(AbpIdentityApplicationContractsModule),
-    typeof(AbpAccountApplicationContractsModule),
-    typeof(AbpTenantManagementApplicationContractsModule),
-    typeof(AbpPermissionManagementApplicationContractsModule)
+    typeof(AbpTenantManagementApplicationContractsModule)
 )]
 public class TemplateApplicationContractsModule : AbpModule
 {
