@@ -1,3 +1,4 @@
+using System.CommandLine;
 using Wion.Cli.Services;
 
 namespace Wion.Cli.Commands;
@@ -6,8 +7,7 @@ public static class NewCommand
 {
     public static void Configure(Command rootCommand)
     {
-        var newCommand = rootCommand.CreateCommand("new");
-        newCommand.Description = "Create a new project from template";
+        var newCommand = new Command("new", "Create a new project from template");
 
         var projectNameArg = new Argument<string>("projectName", "The name of the project to create");
         var verboseOption = new Option<bool>("--verbose", "Enable verbose logging");

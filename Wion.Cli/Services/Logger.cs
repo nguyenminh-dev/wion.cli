@@ -41,6 +41,7 @@ public class Logger : ILogger
 
 public interface ILogger
 {
+    void SetVerbose(bool verbose);
     void LogInfo(string message);
     void LogDebug(string message);
     void LogWarning(string message);

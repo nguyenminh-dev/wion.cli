@@ -17,7 +17,7 @@ public class DirectoryRenamer
             if (dirName.Contains(templateName))
             {
                 var newDirName = dirName.Replace(templateName, newProjectName);
-                var parentDir = Directory.GetParent(dir)?.FullName;
+                var parentDir = Directory.GetParent(dir)?.FullName ?? string.Empty;
                 var newPath = Path.Combine(parentDir, newDirName);
 
                 if (Directory.Exists(newPath))
@@ -42,7 +42,7 @@ public class DirectoryRenamer
             if (fileName.Contains(templateName))
             {
                 var newFileName = fileName.Replace(templateName, newProjectName);
-                var directory = Path.GetDirectoryName(file);
+                var directory = Path.GetDirectoryName(file) ?? string.Empty;
                 var newPath = Path.Combine(directory, newFileName);
 
                 if (File.Exists(newPath))

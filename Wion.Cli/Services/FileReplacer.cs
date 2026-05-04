@@ -1,3 +1,4 @@
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace Wion.Cli.Services;
@@ -48,9 +49,6 @@ public class FileReplacer
             new Replacement(templateName, newProjectName),
             // File extensions
             new Replacement($".{templateName.ToLower()}", $".{newProjectName.ToLower()}"),
-            // ABP module definition files
-            new Replacement($"{templateName}.abpmdl", $"{newProjectName}.abpmdl"),
-            new Replacement($"{templateName}.abpsln", $"{newProjectName}.abpsln"),
             // Solution file
             new Replacement($"{templateName}.sln", $"{newProjectName}.sln"),
             // Common.props reference
@@ -64,6 +62,10 @@ public class FileReplacer
             new Replacement($"{templateName}Consts", $"{newProjectName}Consts"),
             // Constant replacements
             new Replacement($@"{templateName}Consts""", $@"{newProjectName}Consts"""),
+            // Namespace variations
+            new Replacement($"namespace {templateName}.Templates", $"namespace {newProjectName}.Templates"),
+            // Interface names
+            new Replacement($"I{templateName}", $"I{newProjectName}"),
         };
     }
 
