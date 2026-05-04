@@ -62,6 +62,8 @@ public static class NewCommand
         // Try multiple paths to find the template directory
         var possiblePaths = new[]
         {
+            // When installed as dotnet global tool (template in tools folder)
+            Path.Combine(AppContext.BaseDirectory, "tools", "Wion.Template"),
             // When running from published output
             Path.Combine(AppContext.BaseDirectory, "Wion.Template"),
             // When running from project directory (development)

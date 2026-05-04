@@ -10,13 +10,34 @@
     <PackageId>Wion.Cli</PackageId>
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>wion</ToolCommandName>
-    <Version>1.0.0</Version>
+    <Version>1.0.4</Version>
     <Authors>Wion</Authors>
     <Description>Wion CLI - Generate new ABP-based projects from template</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\Wion.Template\**\*">
+      <Pack>true</Pack>
+      <PackagePath>tools\Wion.Template\</PackagePath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>Wion.Template\%(RecursiveDir)%(Filename)%(Extension)</Link>
+    </None>
+    <None Remove="..\Wion.Template\**\bin\**" />
+    <None Remove="..\Wion.Template\**\obj\**" />
+    <None Remove="..\Wion.Template\**\node_modules\**" />
+    <None Remove="..\Wion.Template\**\.vs\**" />
+    <None Remove="..\Wion.Template\**\.idea\**" />
+    <None Remove="..\Wion.Template\**\*.user" />
+    <None Remove="..\Wion.Template\**\.git\**" />
   </ItemGroup>
 
 </Project>

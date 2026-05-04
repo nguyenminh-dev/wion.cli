@@ -5,8 +5,8 @@ param (
 $currentFolder = $PSScriptRoot
 $rootFolder = Join-Path $currentFolder "../../"
 $cliProject = Join-Path $rootFolder "Wion.Cli/Wion.Cli.csproj"
-$nugetHost = "https://package.public.rke.app.dev.tmtco.org"
-$nugetKey = ""
+$nugetHost = "https://package.public.rke.app.dev.tmtco.org/v3/index.json"
+$nugetKey = "63472969-9a13-4309-b506-9931b0b27c78"
 
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host "Wion.Cli NuGet Build & Push Script" -ForegroundColor Cyan
@@ -64,8 +64,6 @@ if ($nupkgFile) {
             Write-Host "========================================" -ForegroundColor Green
             Write-Host "SUCCESS! Package pushed successfully!" -ForegroundColor Green
             Write-Host "========================================" -ForegroundColor Green
-            Write-Host ""
-            Write-Host "Install with: dotnet tool install --global Wion.Cli --version $version --add-source $nugetHost" -ForegroundColor Cyan
         } else {
             Write-Host "ERROR: Push failed!" -ForegroundColor Red
             exit 1
