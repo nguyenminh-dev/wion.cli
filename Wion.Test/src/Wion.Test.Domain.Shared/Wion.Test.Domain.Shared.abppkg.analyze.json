@@ -46,9 +46,9 @@
           "name": "LanguageManagementDomainSharedModule"
         },
         {
-          "declaringAssemblyName": "Volo.Abp.TextTemplateManagement.Domain.Shared",
-          "namespace": "Volo.Abp.TextTemplateManagement",
-          "name": "TextTemplateManagementDomainSharedModule"
+          "declaringAssemblyName": "Volo.Abp.TextTestManagement.Domain.Shared",
+          "namespace": "Volo.Abp.TextTestManagement",
+          "name": "TextTestManagementDomainSharedModule"
         },
         {
           "declaringAssemblyName": "Volo.Abp.Gdpr.Domain.Shared",
@@ -111,7 +111,7 @@
         }
       ],
       "contentType": "abpModule",
-      "name": "TemplateDomainSharedModule",
+      "name": "TestDomainSharedModule",
       "summary": null
     }
   ]

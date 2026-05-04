@@ -44,9 +44,19 @@ public class FileReplacer
 
     private List<Replacement> GetReplacementStrings(string templateName, string newProjectName)
     {
+        var templateShortName = "Template";
+        // Extract short name by removing "Wion." prefix and all remaining dots
+        // Example: "Wion.TestProject.ProjectA" -> "TestProjectProjectA"
+        var newProjectShortName = newProjectName.StartsWith("Wion.")
+            ? newProjectName.Substring(5).Replace(".", "") // Remove "Wion." and all dots
+            : newProjectName.Replace(".", ""); // Remove all dots if doesn't start with "Wion."
+
         return new List<Replacement>
         {
+            // Full name replacements (e.g., "Wion.Template" -> "Wion.Test")
             new Replacement(templateName, newProjectName),
+            // Short name replacements (e.g., "Template" -> "Test", "TemplateDomainModule" -> "TestDomainModule")
+            new Replacement(templateShortName, newProjectShortName),
             // File extensions
             new Replacement($".{templateName.ToLower()}", $".{newProjectName.ToLower()}"),
             // Solution file
@@ -54,17 +64,19 @@ public class FileReplacer
             // Common.props reference
             new Replacement($"$(MSBuildProjectDirectory)/../{templateName}.sln", $"$(MSBuildProjectDirectory)/../{newProjectName}.sln"),
             // XML namespace replacements
-            new Replacement($"xmlns:{templateName}", $"xmlns:{newProjectName}"),
-            new Replacement($"xmlns:ns={templateName}", $"xmlns:ns={newProjectName}"),
+            new Replacement($"xmlns:{templateShortName}", $"xmlns:{newProjectShortName}"),
+            new Replacement($"xmlns:ns={templateShortName}", $"xmlns:ns={newProjectShortName}"),
             // Class name variations
-            new Replacement($"public partial class {templateName}Configuration", $"public partial class {newProjectName}Configuration"),
+            new Replacement($"public partial class {templateShortName}Configuration", $"public partial class {newProjectShortName}Configuration"),
             // Method names
-            new Replacement($"{templateName}Consts", $"{newProjectName}Consts"),
+            new Replacement($"{templateShortName}Consts", $"{newProjectShortName}Consts"),
             // Constant replacements
-            new Replacement($@"{templateName}Consts""", $@"{newProjectName}Consts"""),
+            new Replacement($@"{templateShortName}Consts""", $@"{newProjectShortName}Consts"""),
             // Namespace variations
             new Replacement($"namespace {templateName}.Templates", $"namespace {newProjectName}.Templates"),
-            // Interface names
+            // Interface names (short form)
+            new Replacement($"I{templateShortName}", $"I{newProjectShortName}"),
+            // Interface names (full form)
             new Replacement($"I{templateName}", $"I{newProjectName}"),
         };
     }

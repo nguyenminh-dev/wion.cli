@@ -2,7 +2,7 @@
 
 ## About this solution
 
-This is a layered startup solution based on [Domain Driven Design (DDD)](https://abp.io/docs/latest/framework/architecture/domain-driven-design) practises. All the fundamental ABP modules are already installed. Check the [Application Startup Template](https://abp.io/docs/latest/solution-templates/layered-web-application) documentation for more info.
+This is a layered startup solution based on [Domain Driven Design (DDD)](https://abp.io/docs/latest/framework/architecture/domain-driven-design) practises. All the fundamental ABP modules are already installed. Check the [Application Startup Test](https://abp.io/docs/latest/solution-templates/layered-web-application) documentation for more info.
 
 ### Pre-requirements
 
@@ -64,4 +64,4 @@ You can find detailed setup and configuration guide(s) for your solution below:
 You can see the following resources to learn more about your solution and the ABP Framework:
 
 * [Web Application Development Tutorial](https://abp.io/docs/latest/tutorials/book-store/part-1)
-* [Application Startup Template](https://abp.io/docs/latest/startup-templates/application/index)
+* [Application Startup Test](https://abp.io/docs/latest/startup-templates/application/index)

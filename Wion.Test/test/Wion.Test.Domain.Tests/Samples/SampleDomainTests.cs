@@ -9,7 +9,7 @@ namespace Wion.Test.Samples;
  * (like IdentityUserManager here).
  * Only test your own domain services.
  */
-public abstract class SampleDomainTests<TStartupModule> : TemplateDomainTestBase<TStartupModule>
+public abstract class SampleDomainTests<TStartupModule> : TestDomainTestBase<TStartupModule>
     where TStartupModule : IAbpModule
 {
 

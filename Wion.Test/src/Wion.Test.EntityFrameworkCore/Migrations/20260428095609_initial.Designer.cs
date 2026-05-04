@@ -12,7 +12,7 @@ using Wion.Test.EntityFrameworkCore;
 
 namespace Wion.Test.Migrations
 {
-    [DbContext(typeof(TemplateDbContext))]
+    [DbContext(typeof(TestDbContext))]
     [Migration("20260428095609_initial")]
     partial class initial
     {

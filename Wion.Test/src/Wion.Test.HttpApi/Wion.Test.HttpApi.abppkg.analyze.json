@@ -8,7 +8,7 @@
         {
           "declaringAssemblyName": "Wion.Test.Application.Contracts",
           "namespace": "Wion.Test",
-          "name": "TemplateApplicationContractsModule"
+          "name": "TestApplicationContractsModule"
         },
         {
           "declaringAssemblyName": "Volo.Abp.PermissionManagement.HttpApi",
@@ -31,9 +31,9 @@
           "name": "AbpAccountAdminHttpApiModule"
         },
         {
-          "declaringAssemblyName": "Volo.Abp.TextTemplateManagement.HttpApi",
-          "namespace": "Volo.Abp.TextTemplateManagement",
-          "name": "TextTemplateManagementHttpApiModule"
+          "declaringAssemblyName": "Volo.Abp.TextTestManagement.HttpApi",
+          "namespace": "Volo.Abp.TextTestManagement",
+          "name": "TextTestManagementHttpApiModule"
         },
         {
           "declaringAssemblyName": "Volo.Abp.AuditLogging.HttpApi",
@@ -111,7 +111,7 @@
         }
       ],
       "contentType": "abpModule",
-      "name": "TemplateHttpApiModule",
+      "name": "TestHttpApiModule",
       "summary": null
     }
   ]

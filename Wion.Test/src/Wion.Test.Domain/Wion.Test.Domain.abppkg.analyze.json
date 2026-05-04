@@ -8,7 +8,7 @@
         {
           "declaringAssemblyName": "Wion.Test.Domain.Shared",
           "namespace": "Wion.Test",
-          "name": "TemplateDomainSharedModule"
+          "name": "TestDomainSharedModule"
         },
         {
           "declaringAssemblyName": "Volo.Abp.AuditLogging.Domain",
@@ -61,9 +61,9 @@
           "name": "AbpOpenIddictProDomainModule"
         },
         {
-          "declaringAssemblyName": "Volo.Abp.TextTemplateManagement.Domain",
-          "namespace": "Volo.Abp.TextTemplateManagement",
-          "name": "TextTemplateManagementDomainModule"
+          "declaringAssemblyName": "Volo.Abp.TextTestManagement.Domain",
+          "namespace": "Volo.Abp.TextTestManagement",
+          "name": "TextTestManagementDomainModule"
         },
         {
           "declaringAssemblyName": "Volo.Abp.LanguageManagement.Domain",
@@ -71,9 +71,9 @@
           "name": "LanguageManagementDomainModule"
         },
         {
-          "declaringAssemblyName": "Volo.Abp.Commercial.SuiteTemplates",
-          "namespace": "Volo.Abp.Commercial.SuiteTemplates",
-          "name": "VoloAbpCommercialSuiteTemplatesModule"
+          "declaringAssemblyName": "Volo.Abp.Commercial.SuiteTests",
+          "namespace": "Volo.Abp.Commercial.SuiteTests",
+          "name": "VoloAbpCommercialSuiteTestsModule"
         },
         {
           "declaringAssemblyName": "Volo.Abp.Gdpr.Domain",
@@ -131,7 +131,7 @@
         }
       ],
       "contentType": "abpModule",
-      "name": "TemplateDomainModule",
+      "name": "TestDomainModule",
       "summary": null
     }
   ]

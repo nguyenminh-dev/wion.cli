@@ -3,8 +3,8 @@ using Xunit;
 
 namespace Wion.Test.EntityFrameworkCore.Domains;
 
-[Collection(TemplateTestConsts.CollectionDefinitionName)]
-public class EfCoreSampleDomainTests : SampleDomainTests<TemplateEntityFrameworkCoreTestModule>
+[Collection(TestTestConsts.CollectionDefinitionName)]
+public class EfCoreSampleDomainTests : SampleDomainTests<TestEntityFrameworkCoreTestModule>
 {
 
 }

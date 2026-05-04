@@ -8,7 +8,7 @@
         {
           "declaringAssemblyName": "Wion.Test.Domain",
           "namespace": "Wion.Test",
-          "name": "TemplateDomainModule"
+          "name": "TestDomainModule"
         },
         {
           "declaringAssemblyName": "Volo.Abp.PermissionManagement.EntityFrameworkCore",
@@ -56,9 +56,9 @@
           "name": "LanguageManagementEntityFrameworkCoreModule"
         },
         {
-          "declaringAssemblyName": "Volo.Abp.TextTemplateManagement.EntityFrameworkCore",
-          "namespace": "Volo.Abp.TextTemplateManagement.EntityFrameworkCore",
-          "name": "TextTemplateManagementEntityFrameworkCoreModule"
+          "declaringAssemblyName": "Volo.Abp.TextTestManagement.EntityFrameworkCore",
+          "namespace": "Volo.Abp.TextTestManagement.EntityFrameworkCore",
+          "name": "TextTestManagementEntityFrameworkCoreModule"
         },
         {
           "declaringAssemblyName": "Volo.Abp.Gdpr.EntityFrameworkCore",
@@ -116,7 +116,7 @@
         }
       ],
       "contentType": "abpModule",
-      "name": "TemplateEntityFrameworkCoreModule",
+      "name": "TestEntityFrameworkCoreModule",
       "summary": null
     },
     {
@@ -219,7 +219,7 @@
         }
       ],
       "contentType": "efCoreDbContext",
-      "name": "TemplateDbContext",
+      "name": "TestDbContext",
       "summary": null
     }
   ]

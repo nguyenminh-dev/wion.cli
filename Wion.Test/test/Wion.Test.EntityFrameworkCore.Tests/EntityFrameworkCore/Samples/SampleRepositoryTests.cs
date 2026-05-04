@@ -7,8 +7,8 @@ namespace Wion.Test.EntityFrameworkCore.Samples;
  * Normally, you don't test ABP framework code
  * Only test your custom repository methods.
  */
-[Collection(TemplateTestConsts.CollectionDefinitionName)]
-public class SampleRepositoryTests : TemplateEntityFrameworkCoreTestBase
+[Collection(TestTestConsts.CollectionDefinitionName)]
+public class SampleRepositoryTests : TestEntityFrameworkCoreTestBase
 {
     public SampleRepositoryTests()
     {

@@ -54,13 +54,18 @@ wion new Wion.Invoice
 2. Rename ALL occurrences of:
 
    * "Wion.Template" → "<ProjectName>"
+   * "Template" → "<ShortName>" (remove "Wion." prefix and all dots)
+
+   Examples:
+   * "Wion.Test" → ShortName: "Test"
+   * "Wion.TestProject.ProjectA" → ShortName: "TestProjectProjectA" (no dots!)
+   * "Acme.Invoice" → ShortName: "Invoice"
 
 This includes:
 
 * Folder names
 * File names
-* File contents
-* Namespaces
+* File contents (namespaces, class names, string literals)
 * Solution name
 
 3. Ignore folders:
@@ -106,3 +111,45 @@ IMPORTANT:
 * Do NOT use pseudo code
 * Provide real working code
 * Ensure ABP solution still builds after generation
+
+## Bug Fix: File Content Replacement
+
+### Issue
+When running `wion new Wion.Test`, folder names were renamed correctly (e.g., `Wion.Template.Domain` → `Wion.Test.Domain`), but file contents were not properly updated. Class names like `TemplateDomainModule`, `TemplateAppService`, etc. remained unchanged instead of becoming `TestDomainModule`, `TestAppService`.
+
+### Root Cause
+The `FileReplacer.GetReplacementStrings()` method only replaced the full name "Wion.Template" → "Wion.Test", but did NOT replace the short name "Template" → "Test".
+
+### Solution
+Updated `FileReplacer.cs` to extract the short name by removing "Wion." prefix and ALL remaining dots:
+
+```csharp
+var templateShortName = "Template";
+// Extract short name by removing "Wion." prefix and all remaining dots
+var newProjectShortName = newProjectName.StartsWith("Wion.")
+    ? newProjectName.Substring(5).Replace(".", "") // Remove "Wion." and all dots
+    : newProjectName.Replace(".", ""); // Remove all dots if doesn't start with "Wion."
+
+// Add short name replacement
+new Replacement(templateShortName, newProjectShortName)
+```
+
+### Examples
+
+| Input Project | Full Name Replacement | Short Name Replacement |
+|--------------|----------------------|------------------------|
+| `Wion.Test` | `Wion.Template` → `Wion.Test` | `Template` → `Test` |
+| `Wion.TestProject.ProjectA` | `Wion.Template` → `Wion.TestProject.ProjectA` | `Template` → `TestProjectProjectA` |
+| `Acme.Invoice` | `Wion.Template` → `Acme.Invoice` | `Template` → `Invoice` |
+| `MyApp` | `Wion.Template` → `MyApp` | `Template` → `MyApp` |
+
+**Important**: Short names NEVER contain dots - all dots are removed to ensure valid C# class names.
+
+### What Gets Replaced in Files
+
+1. **Namespaces**: `namespace Wion.Template` → `namespace Wion.Test`
+2. **Class names**: `TemplateDomainModule` → `TestDomainModule`
+3. **Interface names**: `ITemplateRepository` → `ITestRepository`
+4. **Constants**: `TemplateConsts` → `TestConsts`
+5. **String literals**: `"Template"` → `"Test"`
+6. **Using statements**: `using Wion.Template` → `using Wion.Test`

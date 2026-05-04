@@ -117,7 +117,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\minhnv\\Desktop\\wion.cli\\Wion.Cli\\Wion.Cli.csproj",
-      "projectName": "wion",
+      "projectName": "Wion.Cli",
       "projectPath": "C:\\Users\\minhnv\\Desktop\\wion.cli\\Wion.Cli\\Wion.Cli.csproj",
       "packagesPath": "C:\\Users\\minhnv\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\minhnv\\Desktop\\wion.cli\\Wion.Cli\\obj\\",

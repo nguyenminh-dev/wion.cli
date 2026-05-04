@@ -18,7 +18,7 @@ public class Program
             builder.Host
                 .AddAppSettingsSecretsJson()
                 .UseAutofac();
-            await builder.AddApplicationAsync<TemplateHttpApiHostModule>();
+            await builder.AddApplicationAsync<TestHttpApiHostModule>();
             var app = builder.Build();
             await app.InitializeApplicationAsync();
             await app.RunAsync();

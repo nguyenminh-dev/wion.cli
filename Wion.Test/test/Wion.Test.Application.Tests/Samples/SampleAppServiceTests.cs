@@ -9,7 +9,7 @@ namespace Wion.Test.Samples;
  * (like IIdentityUserAppService here).
  * Only test your own application services.
  */
-public abstract class SampleAppServiceTests<TStartupModule> : TemplateApplicationTestBase<TStartupModule>
+public abstract class SampleAppServiceTests<TStartupModule> : TestApplicationTestBase<TStartupModule>
     where TStartupModule : IAbpModule
 {
 

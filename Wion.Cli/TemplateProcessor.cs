@@ -108,10 +108,17 @@ public class TemplateProcessor
 
     private async Task RenameFilesAsync(string directory, string templateName, string newProjectName)
     {
-        var files = Directory.GetFiles(directory, "*.*", SearchOption.AllDirectories)
-            .Where(f => Path.GetFileName(f).Contains(templateName));
+        // Extract short name for file renaming (e.g., "Template" -> "Test")
+        var templateShortName = "Template";
+        var newProjectShortName = newProjectName.StartsWith("Wion.")
+            ? newProjectName.Substring(5).Replace(".", "")
+            : newProjectName.Replace(".", "");
 
-        await _directoryRenamer.RenameFilesAsync(files, templateName, newProjectName);
+        // Find files containing full name OR short name
+        var files = Directory.GetFiles(directory, "*.*", SearchOption.AllDirectories)
+            .Where(f => Path.GetFileName(f).Contains(templateName) || Path.GetFileName(f).Contains(templateShortName));
+
+        await _directoryRenamer.RenameFilesAsync(files, templateName, newProjectName, templateShortName, newProjectShortName);
     }
 
     public int ProcessedCount { get; private set; }

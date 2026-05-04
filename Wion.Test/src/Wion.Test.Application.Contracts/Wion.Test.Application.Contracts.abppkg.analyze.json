@@ -8,7 +8,7 @@
         {
           "declaringAssemblyName": "Wion.Test.Domain.Shared",
           "namespace": "Wion.Test",
-          "name": "TemplateDomainSharedModule"
+          "name": "TestDomainSharedModule"
         },
         {
           "declaringAssemblyName": "Volo.Abp.FeatureManagement.Application.Contracts",
@@ -46,9 +46,9 @@
           "name": "AbpOpenIddictProApplicationContractsModule"
         },
         {
-          "declaringAssemblyName": "Volo.Abp.TextTemplateManagement.Application.Contracts",
-          "namespace": "Volo.Abp.TextTemplateManagement",
-          "name": "TextTemplateManagementApplicationContractsModule"
+          "declaringAssemblyName": "Volo.Abp.TextTestManagement.Application.Contracts",
+          "namespace": "Volo.Abp.TextTestManagement",
+          "name": "TextTestManagementApplicationContractsModule"
         },
         {
           "declaringAssemblyName": "Volo.Abp.LanguageManagement.Application.Contracts",
@@ -111,7 +111,7 @@
         }
       ],
       "contentType": "abpModule",
-      "name": "TemplateApplicationContractsModule",
+      "name": "TestApplicationContractsModule",
       "summary": null
     }
   ]

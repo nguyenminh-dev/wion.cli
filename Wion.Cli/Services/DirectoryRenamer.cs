@@ -34,14 +34,28 @@ public class DirectoryRenamer
         await Task.CompletedTask;
     }
 
-    public async Task RenameFilesAsync(IEnumerable<string> files, string templateName, string newProjectName)
+    public async Task RenameFilesAsync(IEnumerable<string> files, string templateName, string newProjectName, string templateShortName, string newProjectShortName)
     {
         foreach (var file in files)
         {
             var fileName = Path.GetFileName(file);
+            var newFileName = fileName;
+
+            // Replace full name first (e.g., "Wion.Template" -> "Wion.Test")
             if (fileName.Contains(templateName))
             {
-                var newFileName = fileName.Replace(templateName, newProjectName);
+                newFileName = newFileName.Replace(templateName, newProjectName);
+            }
+
+            // Then replace short name (e.g., "Template" -> "Test")
+            if (fileName.Contains(templateShortName))
+            {
+                newFileName = newFileName.Replace(templateShortName, newProjectShortName);
+            }
+
+            // Only rename if actually changed
+            if (fileName != newFileName)
+            {
                 var directory = Path.GetDirectoryName(file) ?? string.Empty;
                 var newPath = Path.Combine(directory, newFileName);
 
@@ -57,5 +71,13 @@ public class DirectoryRenamer
         }
 
         await Task.CompletedTask;
+    }
+
+    // Legacy overload for backward compatibility
+    public async Task RenameFilesAsync(IEnumerable<string> files, string templateName, string newProjectName)
+    {
+        await RenameFilesAsync(files, templateName, newProjectName, "Template", newProjectName.Contains('.')
+            ? newProjectName.Substring(newProjectName.LastIndexOf('.') + 1)
+            : newProjectName);
     }
 }

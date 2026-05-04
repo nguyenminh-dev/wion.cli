@@ -10,7 +10,7 @@ class Program
 {
     static async Task Main(string[] args)
     {
-        using (var application = await AbpApplicationFactory.CreateAsync<TemplateConsoleApiClientModule>(options =>
+        using (var application = await AbpApplicationFactory.CreateAsync<TestConsoleApiClientModule>(options =>
         {
            var builder = new ConfigurationBuilder();
            builder.AddJsonFile("appsettings.json", false);
